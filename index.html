@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <!-- Новый контейнер для фиксированного заголовка -->
+    <div class="fixed-header">
         <h1>Учимся считать</h1>
-
-        <div class="score-area">
-            Правильно: <span id="correct-score" class="score correct-score">0</span>
-            Ошибок: <span id="incorrect-score" class="score incorrect-score">0</span>
+        <div class="header-info">
+            <div class="score-area">
+                Правильно: <span id="correct-score" class="score correct-score">0</span>
+                Ошибок: <span id="incorrect-score" class="score incorrect-score">0</span>
+            </div>
+            <div id="status" class="game-status">
+                Решено: 0 из 10 примеров
+            </div>
         </div>
+    </div>
 
-        <div id="status" class="game-status">
-            Решено: 0 из 10 примеров
-        </div>
-
+    <!-- Основной контейнер для прокручиваемого контента -->
+    <div class="container">
         <div id="problem" class="math-problem">
             Загрузка...
         </div>
@@ -27,7 +32,6 @@
             <input type="number" id="answer-input" placeholder="Ваш ответ">
             <button id="submit-button">Готово!</button>
         </div>
-
 
         <div id="feedback" class="feedback-message" style="display: none;">
             <!-- Сообщение о результате игры -->
