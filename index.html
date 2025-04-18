@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учимся считать</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Учимся считать</h1>
+
+        <div class="score-area">
+            Правильно: <span id="correct-score" class="score correct-score">0</span>
+            Ошибок: <span id="incorrect-score" class="score incorrect-score">0</span>
+        </div>
+
+        <div id="status" class="game-status">
+            Решено: 0 из 10 примеров
+        </div>
+
+        <div id="problem" class="math-problem">
+            Загрузка...
+        </div>
+
+        <div class="input-area">
+            <input type="number" id="answer-input" placeholder="Ваш ответ">
+            <button id="submit-button">Готово!</button>
+        </div>
+
+
+        <div id="feedback" class="feedback-message" style="display: none;">
+            <!-- Сообщение о результате игры -->
+        </div>
+
+        <button id="restart-button" class="restart-button" style="display: none;">
+            Новая игра
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

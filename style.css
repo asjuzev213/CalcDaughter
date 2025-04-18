@@ -1,0 +1,131 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+    font-size: 1.2em; /* Крупный шрифт для адаптации */
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px; /* Ограничиваем ширину на больших экранах */
+    width: 100%; /* Занимает всю доступную ширину на маленьких экранах */
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #0056b3;
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Крупнее заголовок */
+}
+
+.game-status {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.math-problem {
+    font-size: 2em; /* Очень крупный шрифт для примера */
+    margin-bottom: 20px;
+    min-height: 1.5em; /* Чтобы место под пример всегда было */
+}
+
+.input-area {
+    margin-bottom: 20px;
+}
+
+#answer-input {
+    padding: 15px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2em; /* Крупный шрифт в поле ввода */
+    width: calc(60% - 25px); /* Расчет ширины для поля ввода */
+    max-width: 150px; /* Ограничение максимальной ширины */
+    box-sizing: border-box;
+}
+
+#submit-button {
+    padding: 15px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em; /* Крупный шрифт на кнопке */
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #0056b3;
+}
+
+.score-area {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.score {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.correct-score {
+    color: green;
+}
+
+.incorrect-score {
+    color: red;
+}
+
+.feedback-message {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    min-height: 1.5em; /* Чтобы место под сообщение всегда было */
+}
+
+.restart-button {
+    padding: 15px 25px;
+    background-color: #28a745; /* Зеленая кнопка */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em; /* Крупный шрифт */
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+    background-color: #218838;
+}
+
+/* Адаптация для очень маленьких экранов, чтобы поле ввода и кнопка были по ширине */
+@media (max-width: 400px) {
+    #answer-input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    #submit-button {
+        width: 100%;
+    }
+    .input-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
