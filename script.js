@@ -263,14 +263,31 @@ function handleInputKeyPress(event) {
 
 // Инициализация игры при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
+    const answerInput = document.getElementById('answer-input'); // UI модуль уже имеет ссылку, но для слушателя можно получить еще раз здесь
+
     // Добавляем слушатель события клика на кнопку "Готово!"
     gameUI.submitButton.addEventListener('click', handleSubmitClick);
 
     // Добавляем слушатель события нажатия клавиши на поле ввода
-    document.getElementById('answer-input').addEventListener('keypress', handleInputKeyPress);
+    answerInput.addEventListener('keypress', handleInputKeyPress);
 
-     // Добавляем слушатель события клика на кнопку "Новая игра"
+    // Добавляем слушатель события клика на кнопку "Новая игра"
     gameUI.restartButton.addEventListener('click', startGame);
+
+    // ==============================================
+    // == Добавление слушателя фокуса для мобильных устройств ==
+    // ==============================================
+    answerInput.addEventListener('focus', () => {
+        // Добавляем небольшую задержку, чтобы дать виртуальной клавиатуре время появиться
+        // и браузеру - потенциально скорректировать область просмотра.
+        setTimeout(() => {
+            // Прокручиваем поле ввода в видимую область.
+            // 'smooth' для плавной анимации, 'nearest' чтобы прокрутить минимум необходимого.
+            answerInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 200); // Задержка 200 мс (можно настроить, если нужно)
+    });
+    // ==============================================
+
 
     // Начинаем первую игру
     startGame();
